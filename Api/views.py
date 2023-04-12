@@ -1,8 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from decouple import config
-from PIL import Image, ImageOps,GifImagePlugin,ImageSequence
+from PIL import Image
 import numpy as np
 #from .loadingmodel import *
 from collections import Counter
