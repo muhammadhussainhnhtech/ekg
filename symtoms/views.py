@@ -4,6 +4,8 @@ from rest_framework.views import APIView
 from .models import *
 from .serilizer import symtomsSerilizer
 import random
+from .usable import preprocess_questions
+from django.conf import settings
 
 # Create your views here.
 class anlaysis_symtoms(APIView):
@@ -21,6 +23,29 @@ class anlaysis_symtoms(APIView):
                 "data":serilize_data.data
             })
         
+        except Exception as e:
+            message = {'status':False}
+            message.update(message=str(e))if settings.DEBUG else message.update(message='Internal server error')
+            return Response(message,status=500)
+        
+
+    
+    def post(self, request):
+        try:
+            data = request.data["questions"]
+            if not data:
+                return Response({"status":False,"message":"Please choose atleast one question"})
+            
+            else:
+                fetchdata = DiseaseSymtoms.objects.filter(uid__in = data)
+                summary = preprocess_questions(fetchdata)
+                return Response({
+                    "status":True,
+                    "data":summary
+                })
+            
+
+
         except Exception as e:
             message = {'status':False}
             message.update(message=str(e))if settings.DEBUG else message.update(message='Internal server error')
