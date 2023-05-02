@@ -1,0 +1,6 @@
+weblink:
+https://scopium-new.vercel.app
+
+
+apilink:
+https://ekg.pythonanywhere.com

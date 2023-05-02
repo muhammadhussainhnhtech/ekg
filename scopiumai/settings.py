@@ -142,6 +142,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://scopium.ml",
     'https://scopium.vercel.app',
+    'https://scopium-new.vercel.app'
     
 
     

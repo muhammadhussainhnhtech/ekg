@@ -4,7 +4,7 @@ from symtoms.views import *
 urlpatterns = [
 
 #web urls  home
-path('anlaysis_symtoms/',anlaysis_symtoms.as_view()),
+path('dummydata/',dummydata.as_view()),
 
 
 
