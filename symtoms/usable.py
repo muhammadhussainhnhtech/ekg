@@ -14,3 +14,18 @@ def preprocess_questions(data):
         "Uncardic":int(probability_of_uncardic)
         
     }
+
+
+
+def calculate_probabilities(data):
+    if data:
+        probalilityobj = list(data[0]["symtomslist"])
+        for i in range(1,len(data)):
+            for j in range(len(data[i]["symtomslist"])):
+                valueSum = round(probalilityobj[j]["probability"] + data[i]["symtomslist"][j]["probability"],2)
+                probalilityobj[j]["probability"]  = valueSum
+            
+        return probalilityobj
+
+    else:
+        return False

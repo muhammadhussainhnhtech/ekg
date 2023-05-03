@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from .models import *
 from .serilizer import QuestionsSerilizer
 import random
-from .usable import preprocess_questions
+from .usable import preprocess_questions,calculate_probabilities
 from django.conf import settings
 import pandas as pd
 from pathlib import Path
@@ -65,90 +65,132 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 class dummydata(APIView):
     def get(self,request):
-        action = request.GET.get('action')
-        if action == "disease":
-            bulklist = list()
-            diseasesnames  = ['Infarct', 'Ischemia', 'Aortic Dissection', 'PE', 'CHF', 'Pericarditis', 'AS/AI', 'Pulmonary', 'Eso rupture', 'MS', 'GI']
+        try:
+            action = request.GET.get('action')
+            if action == "disease":
+                bulklist = list()
+                diseasesnames  = ['Infarct', 'Ischemia', 'Aortic Dissection', 'PE', 'CHF', 'Pericarditis', 'AS/AI', 'Pulmonary', 'Eso rupture', 'MS', 'GI']
 
-            getQuestions = Questions.objects.all()
-            for j in diseasesnames:
-                for k in getQuestions:
+                getQuestions = Questions.objects.all()
+                for j in diseasesnames:
+                    for k in getQuestions:
 
+                
+                        bulklist.append(
+                            diseases(name = j,question = k)
+                        )
+
+                diseases.objects.bulk_create(bulklist)
+                return Response({"status":True,"message":"Disease and Questions inserted successfully"})    
             
-                    bulklist.append(
-                        diseases(name = j,question = k)
-                    )
-
-            diseases.objects.bulk_create(bulklist)
-            return Response({"status":True,"message":"Disease and Questions inserted successfully"})    
-        
-        
-        
-        else:
-            file = pd.read_csv(BASE_DIR / "symtoms/symtoms.csv")
-            quest = file["question"].unique()
-            fileColumns = file.columns
-            totaldisease = fileColumns[2::]
-            for j in quest:
-                filterdata = file[file["question"] == j]
-                print("length",len(filterdata))
-                for i in range(len(totaldisease)):
-                    specificdiseaseSymtoms = filterdata[totaldisease[i]]
-                    print('question',totaldisease[i])
-                    #print("values",specificdiseaseSymtoms)
-                   
-                    # for k in specificdiseaseSymtoms:
-                    #     print("probability",k)
-
-                    for k in range(len(specificdiseaseSymtoms)):
-                        print("probability",k,specificdiseaseSymtoms.iloc[k],filterdata["Chest Pain"].iloc[k])
-
-
-                    print('------------------------------------------')
+            
+            
+            else:
+                file = pd.read_csv(BASE_DIR / "symtoms/symtoms.csv")
+                quest = file["question"].unique()
+                fileColumns = file.columns
+                totaldisease = fileColumns[2::]
+                bulklist = list()
+                for j in quest:
+                    filterdata = file[file["question"] == j]
                     
-                        
-                        
-
-
-                   
-                    #print(filterdata[i == i])
-
-                    ##filter disease 
-
-                    #filterdisease = diseases.objects.filter()
-
-
-                   
-
-            
-            
-
-
-
-           
-            return Response('okay')
-
-
-
-
-
-
-
-            # bulklist = []
-            # symptomslist = ['Pressure', 'Squeezing', 'Central', 'Gripping', 'Heaviness', 'Tightness', 'Exertional', 'Retrosternal', 'Left side', 'Dull', 'Ache', 'Stabbing', 'Right side', 'Tearing', 'Ripping', 'Burning', 'Boring', 'Sharp', 'Pleuritic', 'Positional', 'Fleeting', 'Radiates', 'Jaw', 'Left arm', 'Right arm', 'Sudden', 'Gradual', 'Severe', 'Subacute', 'Onset at rest', 'Sweating', 'Nitrate relief', 'Fever', 'Cough', 'Short of breath', 'Localised', 'Radiating to Back', 'Stomach', 'Tender', 'Throat', 'Diffuse', 'Splitting', 'Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years', 'Nausea', 'Vomiting', 'Syncope', 'Acid reflux', 'Improvement with Bending', 'Persistent', 'Intermittent', 'Eating']
-            
-            
-            # getdiseases = diseases.objects.all()
-
-            # for j in symptomslist:
-            #     for k in getdiseases:
-            #         bulklist.append(
-
-            #             symtoms()
-            #         )
-
-            # symtoms.objects.bulk_create(bulklist)
-
-
-            
+                    for i in range(len(totaldisease)):
+                        specificdiseaseSymtoms = filterdata[totaldisease[i]]
         
+                        ##fetch disease data
+                        fetchspecificDiseases = diseases.objects.get(name = totaldisease[i],question__question = j,question__version_list = "v1")
+
+                        
+
+
+                        for k in range(len(specificdiseaseSymtoms)):
+                            bulklist.append(symtoms(name = filterdata["Chest Pain"].iloc[k],probability = specificdiseaseSymtoms.iloc[k],diseasesname = fetchspecificDiseases))
+                            
+                        
+
+
+                symtoms.objects.bulk_create(bulklist)
+                return Response({"status":True,"message":"Insertion successfully"})
+
+
+
+        except Exception as e:
+            message = {'status':False}
+            message.update(message=str(e))if settings.DEBUG else message.update(message='Internal server error')
+            return Response(message,status=500)
+
+
+
+
+
+
+class anlaysis_symtoms(APIView):
+    def get(self,request):
+        try:
+            action = request.GET.get('action')
+            if action == 'v1':
+                fetchQuestions = Questions.objects.values('id','version_list','question')
+                for j in fetchQuestions:
+                    #fetch symtoms according to questions
+                    fetchsymtoms = symtoms.objects.filter(diseasesname__question__id = j['id']).values_list('name',flat=True).distinct()
+                    j['symtoms'] = fetchsymtoms
+
+                return Response({
+                    "status": True,
+                    "data":fetchQuestions
+
+                })
+            
+            else:
+                return Response({
+                    "status":False,
+                    "message":"Comming Soon...."
+                })
+                
+        
+
+
+        except Exception as e:
+            message = {'status':False}
+            message.update(message=str(e))if settings.DEBUG else message.update(message='Internal server error')
+            return Response(message,status=500)
+
+
+    def post(self, request):
+        try:
+            action = request.GET.get('action')
+            if action == 'v1':
+                data = request.data
+                symtomslist = list()
+                for j in data:
+                    ## fetch symtoms
+                    fetchSymtoms = symtoms.objects.filter(name = j["symtoms"],diseasesname__question__id =j["id"]).values('probability',diseases_name = F('diseasesname__name'))
+
+                    symtomslist.append(
+                        {   "symtomsname":j["symtoms"],
+                            "symtomslist":fetchSymtoms
+                            
+                        }
+
+                    )
+                
+                #calculate probabilities for each diseases
+                symtomsSum = calculate_probabilities(symtomslist)
+                return Response({
+                    "status":True,
+                    "data":symtomsSum
+                })
+            
+
+                        
+            else:
+                return Response({
+                    "status":False,
+                    "message":"Comming Soon...."
+                })
+                    
+
+        except Exception as e:
+            message = {'status':False}
+            message.update(message=str(e))if settings.DEBUG else message.update(message='Internal server error')
+            return Response(message,status=500)
