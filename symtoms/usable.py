@@ -19,7 +19,7 @@ def preprocess_questions(data):
 def convert_to_percentage(data,count_data):
 
     total_probability = sum(disease['probability'] for disease in data)
-    data = [{'probability': round(j['probability'] / total_probability, 2), 'diseases_name': j['diseases_name']} for j in data]
+    data = [{'probability': round(j['probability'] / total_probability * 100, 2), 'diseases_name': j['diseases_name']} for j in data]
     
     return data
 
