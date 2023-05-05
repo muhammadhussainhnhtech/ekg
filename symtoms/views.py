@@ -175,7 +175,7 @@ class anlaysis_symtoms(APIView):
                     )
                 
                 #calculate probabilities for each diseases
-                symtomsSum = calculate_probabilities(symtomslist)
+                symtomsSum = calculate_probabilities(symtomslist,len(data))
                 return Response({
                     "status":True,
                     "data":symtomsSum

@@ -16,16 +16,26 @@ def preprocess_questions(data):
     }
 
 
+def convert_to_percentage(data,count_data):
 
-def calculate_probabilities(data):
+    total_probability = sum(disease['probability'] for disease in data)
+    data = [{'probability': round(j['probability'] / total_probability, 2), 'diseases_name': j['diseases_name']} for j in data]
+    
+    return data
+
+
+def calculate_probabilities(data,count_data):
     if data:
+        
         probalilityobj = list(data[0]["symtomslist"])
         for i in range(1,len(data)):
             for j in range(len(data[i]["symtomslist"])):
                 valueSum = round(probalilityobj[j]["probability"] + data[i]["symtomslist"][j]["probability"],2)
                 probalilityobj[j]["probability"]  = valueSum
-            
-        return probalilityobj
+               
+        
+        converted_data = convert_to_percentage(probalilityobj,count_data)
+        return converted_data
 
     else:
         return False
