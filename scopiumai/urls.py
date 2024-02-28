@@ -7,7 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Api/', include('Api.urls')),
     path('ekg/', include('symtoms.urls')),
-
-
-
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

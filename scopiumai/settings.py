@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,11 +80,24 @@ WSGI_APPLICATION = 'scopiumai.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "database_backup/prod_db.sqlite3",
+    },
+    "beta": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "database_backup/beta_db.sqlite3",
+    },
 }
+
+
+
+# DATABASES = {
+#      "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "database_backup/prod_db.sqlite3",
+#     },
+# }
 
 
 # Password validation
@@ -145,7 +159,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://scopium.ml",
     'https://scopium.vercel.app',
     'https://scopium-new.vercel.app',
-    'https://648ad3fa8bf76a0097b3a69d--jovial-sawine-d3a747.netlify.app'
+    'https://scopium-new-sepia.vercel.app',
+    'https://648ad3fa8bf76a0097b3a69d--jovial-sawine-d3a747.netlify.app',
+    'https://scopium-new-sigma.vercel.app'
 
 
 
