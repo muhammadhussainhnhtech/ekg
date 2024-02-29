@@ -1,0 +1,58 @@
+Chest Pain,question,Infarct,Ischemia,Aortic Dissection,PE,CHF,Pericarditis,AS/AI,Pulmonary,Eso rupture,MS,GI
+Pressure,a,9,9,8,5,4,3,6,3,3,2,4
+Squeezing,a,9,9,6,4,3,3,7,3,3,2,4
+Central,a,9,9,9,5,4,7,6,6,4,2,7
+Gripping,a,9,9,8,4,3,6,3,3,6,1,1
+Heaviness,a,9,9,7,3,6,5,5,3,4,1,2
+Tightness,a,9,9,6,4,5,5,7,5,2,2,4
+Exertional,a,9,9,1,3,8,2,7,7,1,1,1
+Retrosternal,a,9,9,8,4,6,8,8,5,9,6,7
+Left side,a,9,9,4,4,3,7,7,5,4,4,4
+Dull,a,9,9,3,3,3,5,6,6,5,6,7
+Ache,b,4,4,3,2,1,2,2,2,1,8,6
+Stabbing,c,1,1,6,9,1,7,1,1,7,6,2
+Right side,d,3,3,2,4,1,4,2,5,1,7,6
+Tearing,c,1,2,9,2,1,3,1,1,3,1,1
+Ripping,c,1,1,9,2,1,2,1,1,3,1,1
+Burning,e,3,3,2,2,2,6,1,2,2,3,7
+Boring,e,4,4,7,4,2,6,2,1,3,1,7
+Sharp,b,1,1,7,8,1,6,1,2,2,8,2
+Pleuritic,f,1,1,2,9,1,8,1,3,2,1,1
+Positional,b,1,1,1,1,4,8,1,1,1,9,3
+Fleeting,b,1,1,1,1,1,2,1,1,1,7,2
+Radiates,a,8,8,8,3,1,7,4,2,4,2,7
+Jaw,a,8,4,7,2,2,4,4,1,2,1,1
+Left arm,a,9,8,7,1,2,7,5,1,2,3,1
+Right arm,d,2,2,3,1,1,3,1,1,1,1,3
+Sudden,d,7,5,8,9,2,3,1,1,8,2,2
+Gradual,d,3,7,4,3,8,6,4,7,3,5,5
+Severe,a,9,7,9,8,5,8,4,3,9,4,2
+Subacute,d,5,6,2,4,5,5,5,6,2,1,1
+Onset at rest,d,6,7,8,7,3,7,4,2,6,1,5
+Sweating,a,7,7,3,3,4,3,2,6,5,1,4
+Nitrate relief,a,2,9,1,1,6,1,8,1,1,1,3
+Fever,g,1,1,1,1,1,2,1,9,2,1,1
+Cough,g,2,1,1,7,6,2,2,9,2,1,2
+Short of breath,a,8,6,4,9,9,5,6,9,1,1,2
+Localised,b,3,2,2,4,1,2,1,1,8,8,1
+Radiating to Back,c,3,2,9,4,2,7,1,1,5,2,5
+Stomach,e,2,3,6,1,1,2,1,1,1,1,8
+Tender,b,1,1,1,1,1,1,1,1,5,9,5
+Throat,a,8,8,4,2,1,5,5,1,5,1,3
+Diffuse,a,7,7,5,2,1,8,5,5,4,3,6
+Splitting ,c,2,2,9,1,1,2,1,1,7,1,1
+Seconds,h,1,1,1,1,1,1,1,1,1,8,1
+Minutes,h,4,4,6,4,1,1,5,2,5,8,6
+Hours,h,3,4,4,7,2,3,1,4,6,8,7
+Days,h,2,4,2,3,6,6,1,2,2,7,4
+Weeks,h,1,3,1,2,4,3,1,1,1,5,3
+Months,h,1,1,1,1,2,2,1,1,1,3,2
+Years,h,1,1,1,1,1,1,1,1,1,2,1
+Nausea,a,7,7,4,2,1,2,1,3,5,1,4
+Vomiting,a,6,6,3,2,1,2,1,2,7,1,6
+Syncope,a,4,2,2,7,1,1,5,3,1,1,1
+Acid reflux,e,1,1,1,1,1,1,1,1,9,1,9
+Improvement with Bending,f,1,1,1,1,1,7,1,1,2,5,3
+Persistent,d,8,8,9,8,7,8,2,7,9,6,7
+Intermittent,d,6,7,3,7,1,2,6,1,2,4,6
+Eating,e,1,1,1,1,1,1,1,1,6,1,8
