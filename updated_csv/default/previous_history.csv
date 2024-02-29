@@ -1,0 +1,15 @@
+Chest Pain,question,Infarct,Ischemia,Aortic Dissection,PE,CHF,Pericarditis,AS/AI,Pulmonary,Eso rupture,MS,GI
+Infarct,Cardiovascular Conditions,0.8,0.8,0.2,0.1,0.6,0.1,0.1,0.1,0.1,0.1,0.1
+CAD,Cardiovascular Conditions,0.8,0.8,0.2,0.1,0.6,0.1,0.1,0.1,0.1,0.1,0.1
+Aortic dissection,Cardiovascular Conditions,0.2,0.2,0.8,0.1,0.1,0.1,0.3,0.1,0.1,0.1,0.1
+PE/DVT,Cardiovascular Conditions,0.1,0.1,0.1,0.8,0.1,0.1,0.1,0.1,0.1,0.1,0.1
+CHF,Cardiovascular Conditions,0.4,0.4,0.1,0.1,0.8,0.1,0.3,0.1,0.1,0.1,0.1
+Pericarditis,Cardiovascular Conditions,0.2,0.2,0.1,0.1,0.2,0.8,0.1,0.1,0.1,0.1,0.1
+AS/AI,Cardiovascular Conditions,0.1,0.1,0.3,0.1,0.5,0.1,0.8,0.1,0.1,0.1,0.1
+COPD,Respiratory Conditions,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.8,0.1,0.1,0.1
+Esophagus,Esophageal Rupture,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.8,0.1,0.1
+Musculoskeletal,Musculoskeletal Conditions,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.5,0.1
+G.I.,Gastrointestinal Conditions,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.3,0.1,0.6
+CTD,Connective Tissue Disorders,0.1,0.1,0.8,0.1,0.1,0.1,0.1,0.1,0.3,0.2,0.1
+Auto immune,Connective Tissue Disorders,0.2,0.2,0.2,0.2,0.1,0.5,0.1,0.1,0.1,0.1,0.1
+Coagulopathy,Coagulation Disorders,0.15,0.15,0.1,0.8,0.1,0.1,0.1,0.01,0.01,0.01,0.01

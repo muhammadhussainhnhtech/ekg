@@ -1,0 +1,19 @@
+Chest Pain,question,Infarct,Ischemia,Aortic Dissection,PE,CHF,Pericarditis,AS/AI,Pulmonary,Eso rupture,MS,GI
+DM,Chronic Medical Conditions,0.95,0.95,0.75,0.2,0.25,0.01,0.1,0.05,0.2,0.01,0.01
+HTN,Chronic Medical Conditions,0.8,0.8,0.99,0.1,0.65,0.01,0.8,0.01,0.01,0.01,0.01
+HLD,Chronic Medical Conditions,0.65,0.65,0.6,0.01,0.2,0.01,0.5,0.01,0.01,0.01,0.01
+FH,Family History,0.65,0.65,0.6,0.01,0.1,0.01,0.01,0.01,0.01,0.01,0.01
+GreaterCRF's,Chronic Medical Conditions,0.9,0.9,0.75,0.01,0.2,0.01,0.25,0.01,0.01,0.01,0.01
+CP1Day,Clinical Presentation,0.7,0.7,0.9,0.6,0.8,0.4,0.01,0.02,0.65,0.1,0.2
+TOB,Lifestyle Factors,0.9,0.9,0.7,0.4,0.06,0.02,0.02,0.25,0.15,0.01,0.2
+ASA,Medications,0.45,0.45,0.1,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01
+Calf pain/swell,Symptoms,0.01,0.01,0.01,0.9,0.01,0.01,0.01,0.01,0.01,0.01,0.01
+Travel,Lifestyle Factors,0.01,0.01,0.01,0.9,0.01,0.01,0.01,0.01,0.01,0.01,0.01
+Bed ridden,Immobility-Related Factors,0.01,0.01,0.01,0.9,0.01,0.01,0.01,0.01,0.01,0.01,0.01
+Recent surgery ,Immobility-Related Factors,0.01,0.01,0.01,0.9,0.01,0.01,0.01,0.01,0.01,0.01,0.01
+Age<20,Age-Related Factors,0.9,0.9,0.9,0.7,0.9,0.5,0.9,0.9,0.8,0.1,0.2
+Age<30,Age-Related Factors,0.05,0.05,0.05,0.1,0.1,0.2,0.2,0.2,0.05,0.8,0.6
+Age<40,Age-Related Factors,0.1,0.1,0.1,0.2,0.2,0.4,0.4,0.4,0.2,0.6,0.5
+Age<50,Age-Related Factors,0.4,0.4,0.4,0.45,0.4,0.5,0.6,0.6,0.4,0.4,0.4
+Age<60,Age-Related Factors,0.5,0.5,0.5,0.6,0.5,0.5,0.75,0.8,0.6,0.2,0.2
+Age>65,Age-Related Factors,0.9,0.9,0.9,0.7,0.9,0.5,0.9,0.9,0.8,0.1,0.2

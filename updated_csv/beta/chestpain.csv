@@ -1,0 +1,58 @@
+Chest Pain,question,Infarct,Ischemia,Aortic Dissection,PE,CHF,Pericarditis,AS/AI,Pulmonary,Eso rupture,MS,GI
+Pressure,Pain Characteristics,0.95,0.95,0.9,0.6,0.4,0.45,0.65,0.35,0.25,0.02,0.55
+Squeezing,Pain Characteristics,0.95,0.95,0.65,0.4,0.2,0.4,0.7,0.35,0.2,0.02,0.45
+Central,Location and Radiation,0.9,0.9,0.85,0.45,0.2,0.7,0.55,0.6,0.45,0.02,0.7
+Gripping,Pain Characteristics,0.7,0.7,0.85,0.25,0.05,0.3,0.02,0.3,0.65,0.01,0.05
+Heaviness,Pain Characteristics,0.96,0.95,0.7,0.3,0.6,0.6,0.15,0.3,0.4,0.01,0.2
+Tightness,Pain Characteristics,0.96,0.95,0.6,0.4,0.5,0.45,0.65,0.45,0.15,0.02,0.2
+Exertional,Location and Radiation,0.98,0.98,0.01,0.25,0.85,0.02,0.85,0.75,0.01,0.01,0.01
+Retrosternal,Location and Radiation,0.95,0.95,0.85,0.35,0.4,0.8,0.55,0.25,0.9,0.15,0.7
+Left side,Location and Radiation,0.95,0.95,0.4,0.2,0.03,0.5,0.5,0.25,0.4,0.1,0.35
+Dull,Pain Characteristics,0.95,0.95,0.2,0.3,0.03,0.45,0.65,0.6,0.45,0.06,0.7
+Ache,Pain Characteristics,0.4,0.3,0.03,0.1,0.01,0.02,0.02,0.02,0.01,0.75,0.55
+Stabbing,Pain Characteristics,0.01,0.01,0.06,0.9,0.01,0.55,0.01,0.01,0.7,0.5,0.15
+Right side,Location and Radiation,0.15,0.15,0.1,0.15,0.01,0.3,0.02,0.3,0.01,0.7,0.6
+Tearing,Pain Characteristics,0.01,0.01,0.99,0.1,0.01,0.05,0.01,0.01,0.25,0.01,0.01
+Ripping,Pain Characteristics,0.01,0.01,0.99,0.1,0.01,0.02,0.01,0.01,0.2,0.01,0.01
+Burning,Pain Characteristics,0.25,0.25,0.2,0.5,0.01,0.8,0.01,0.02,0.35,0.35,0.75
+Boring,Pain Characteristics,0.25,0.2,0.8,0.15,0.01,0.15,0.02,0.01,0.25,0.01,0.7
+Sharp,Pain Characteristics,0.01,0.01,0.25,0.7,0.01,0.2,0.01,0.02,0.02,0.8,0.2
+Pleuritic,Pain Characteristics,0.01,0.01,0.07,0.99,0.01,0.8,0.01,0.35,0.15,0.01,0.01
+Positional,Pain Characteristics,0.01,0.01,0.01,0.01,0.45,0.95,0.01,0.01,0.01,0.9,0.45
+Fleeting,Pain Characteristics,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.65,0.2
+Radiates,Location and Radiation,0.75,0.75,0.85,0.5,0.01,0.8,0.45,0.02,0.45,0.2,0.65
+Jaw,Location and Radiation,0.75,0.6,0.15,0.15,0.02,0.4,0.45,0.01,0.1,0.01,0.01
+Left arm,Location and Radiation,0.95,0.9,0.1,0.01,0.02,0.25,0.45,0.01,0.2,0.03,0.01
+Right arm,Location and Radiation,0.2,0.1,0.05,0.01,0.01,0.25,0.01,0.01,0.01,0.01,0.25
+Sudden,Temporal Characteristics,0.77,0.5,0.8,0.9,0.2,0.1,0.01,0.01,0.75,0.02,0.02
+Gradual,Temporal Characteristics,0.35,0.5,0.2,0.45,0.7,0.6,0.45,0.75,0.2,0.05,0.5
+Severe,Temporal Characteristics,0.99,0.77,0.99,0.8,0.15,0.89,0.2,0.03,0.9,0.04,0.2
+Subacute,Temporal Characteristics,0.25,0.45,0.2,0.35,0.5,0.5,0.5,0.6,0.15,0.01,0.01
+Onset at rest,Temporal Characteristics,0.69,0.6,0.85,0.65,0.05,0.75,0.1,0.02,0.6,0.01,0.5
+Sweating,Pain Characteristics,0.85,0.7,0.3,0.2,0.05,0.25,0.2,0.5,0.45,0.01,0.3
+Nitrate relief,Temporal Characteristics,0.1,0.9,0.01,0.01,0.5,0.01,0.75,0.01,0.01,0.01,0.15
+Fever,Respiratory Complaints,0.01,0.01,0.01,0.01,0.01,0.2,0.01,0.99,0.15,0.01,0.01
+Cough,Respiratory Complaints,0.15,0.05,0.01,0.45,0.65,0.05,0.02,0.99,0.1,0.01,0.02
+Short of breath,Respiratory Complaints,0.75,0.3,0.04,0.96,0.99,0.45,0.6,0.99,0.15,0.01,0.02
+Localised,General and Temporal Characteristics,0.02,0.02,0.02,0.25,0.01,0.05,0.01,0.01,0.85,0.08,0.01
+Radiating to Back,Location and Radiation,0.3,0.2,0.9,0.45,0.02,0.65,0.01,0.01,0.5,0.02,0.05
+Stomach,Gastrointestinal Complaints,0.25,0.2,0.3,0.01,0.01,0.1,0.01,0.01,0.01,0.01,0.9
+Tender,Pain Characteristics,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.45,0.99,0.05
+Throat,General and Temporal Characteristics,0.65,0.45,0.25,0.15,0.01,0.3,0.45,0.01,0.05,0.01,0.03
+Diffuse,General and Temporal Characteristics,0.7,0.7,0.55,0.45,0.01,0.8,0.55,0.45,0.45,0.25,0.06
+Splitting,General and Temporal Characteristics,0.02,0.02,0.95,0.05,0.01,0.02,0.01,0.01,0.75,0.01,0.01
+Seconds,General and Temporal Characteristics,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.8,0.01
+Minutes,General and Temporal Characteristics,0.5,0.4,0.7,0.4,0.01,0.01,0.1,0.02,0.55,0.75,0.65
+Hours,General and Temporal Characteristics,0.3,0.4,0.2,0.65,0.2,0.3,0.01,0.6,0.65,0.8,0.7
+Days,General and Temporal Characteristics,0.1,0.25,0.01,0.2,0.06,0.75,0.01,0.2,0.2,0.75,0.45
+Weeks,General and Temporal Characteristics,0.01,0.2,0.01,0.05,0.4,0.3,0.5,0.01,0.01,0.5,0.3
+Months,General and Temporal Characteristics,0.01,0.08,0.01,0.01,0.2,0.05,0.5,0.01,0.01,0.15,0.2
+Years,General and Temporal Characteristics,0.01,0.01,0.01,0.01,0.05,0.01,0.1,0.01,0.01,0.2,0.15
+Nausea,Gastrointestinal Complaints,0.82,0.72,0.2,0.15,0.02,0.05,0.01,0.3,0.45,0.01,0.7
+Vomiting,Gastrointestinal Complaints,0.6,0.4,0.1,0.05,0.01,0.02,0.01,0.02,0.75,0.01,0.8
+Syncope,Temporal Characteristics,0.15,0.1,0.1,0.45,0.01,0.01,0.55,0.25,0.01,0.01,0.01
+Acid reflux,Gastrointestinal Complaints,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.9,0.01,0.99
+Improvement with Bending,Gastrointestinal Complaints,0.01,0.01,0.01,0.01,0.01,0.75,0.01,0.01,0.25,0.55,0.25
+Persistent,Triggers and Associated Factors,0.9,0.8,0.95,0.8,0.07,0.85,0.25,0.7,0.9,0.65,0.6
+Intermittent,Triggers and Associated Factors,0.2,0.5,0.15,0.6,0.01,0.04,0.6,0.01,0.02,0.65,0.6
+Eating,Triggers and Associated Factors,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.75,0.01,0.9

@@ -1,0 +1,24 @@
+Chest Pain,question,Infarct,Ischemia,Aortic Dissection,PE,CHF,Pericarditis,AS/AI,Pulmonary,Eso rupture,MS,GI
+HR>100,Vital Signs,0.7,0.5,0.7,0.9,0.7,0.6,0.6,0.7,0.7,0.01,0.02
+T>100.4,Vital Signs,0.2,0.1,0.1,0.1,0.1,0.5,0.1,0.99,0.3,0.01,0.02
+RR>20,Vital Signs,0.3,0.2,0.2,0.9,0.9,0.5,0.3,0.99,0.75,0.01,0.02
+Sbp>140,Vital Signs,0.7,0.5,0.8,0.2,0.7,0.2,0.3,0.1,0.01,0.01,0.01
+Sbp< 100,Vital Signs,0.5,0.2,0.5,0.7,0.5,0.2,0.7,0.4,0.8,0.01,0.01
+O2sat < 90,Vital Signs,0.1,0.1,0.1,0.9,0.9,0.2,0.3,0.9,0.05,0.01,0.01
+S3,Cardiac Findings,0.2,0.1,0.3,0.2,0.9,0.1,0.5,0.1,0.01,0.01,0.01
+R S3,Cardiac Findings,0.1,0.1,0.1,0.9,0.2,0.1,0.1,0.1,0.01,0.01,0.01
+Murmur systolic,Cardiac Findings,0.1,0.1,0.3,0.1,0.1,0.1,0.9,0.1,0.01,0.01,0.01
+Murmur Diastolic,Cardiac Findings,0.1,0.1,0.6,0.1,0.1,0.1,0.9,0.1,0.01,0.01,0.01
+Pericardial rub,Cardiac Findings,0.1,0.1,0.1,0.1,0.1,0.9,0.1,0.1,0.01,0.01,0.01
+Pleural Rub,Respiratory Findings,0.1,0.1,0.1,0.9,0.1,0.05,0.1,0.9,0.01,0.01,0.01
+Rales,Respiratory Findings,0.3,0.1,0.3,0.1,0.9,0.1,0.7,0.1,0.01,0.01,0.01
+CTA,Respiratory Findings,0.5,0.1,0.4,0.2,0.1,0.4,0.5,0.1,0.1,0.01,0.01
+JVD> 4cm,Circulatory Findings,0.3,0.1,0.2,0.2,0.9,0.7,0.6,0.1,0.01,0.01,0.01
+Diaphoresis,Circulatory Findings,0.7,0.5,0.6,0.5,0.5,0.6,0.5,0.8,0.75,0.01,0.01
+Low carotid puls,Circulatory Findings,0.1,0.1,0.2,0.1,0.1,0.1,0.9,0.1,0.01,0.01,0.01
+Un= pulses,Circulatory Findings,0.01,0.01,0.99,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.03
+Edema,Abdominal Findings,0.2,0.1,0.1,0.1,0.9,0.2,0.2,0.1,0.01,0.01,0.01
+Abd tender,Abdominal Findings,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.9,0.01,0.09
+Point tender,Abdominal Findings,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.01,0.01,0.09,0.01
+Rhonchi/wheeze,Respiratory Sounds,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.09,0.01,0.01,0.01
+BP differential,Circulatory Findings,0.1,0.1,0.9,0.1,0.1,0.1,0.1,0.1,0.01,0.01,0.03

@@ -713,6 +713,26 @@ class Login(APIView):
 
 
 class UpdateProbablities(APIView):
+    """
+    Update Probabilty in Database, a/c symptoms and its disease 
+
+    The class has an POST method API which is taking a csv file in (form-data)
+    convert the csv file in the List and Object Architecture so easily readable
+        i.e 
+            json_data = {
+                "Gripping": {               # symptoms
+                    "Pulmonary": 0.05,      # disease with probability
+                    "Eso rupture": 0.6
+                },
+                "Ripping": {               # symptoms
+                    "Pulmonary": 0.5,      # disease with probability
+                    "Eso rupture": 0.8
+                }
+            }
+
+    Update the Probability in DATABASE a/c to symptoms and its disease
+
+    """
     def post(self, request):
 
         try:
@@ -741,13 +761,6 @@ class UpdateProbablities(APIView):
             
             # print(json.dumps(json_data, indent=2))
             
-            # json_data = {
-            #         "Gripping": {               # symptoms
-            #             "Pulmonary": 0.05,      # disease with probability
-            #             "Eso rupture": 0.6
-            #         }
-            #     }
-
             # track not_found data in db AND multiple_symptms_and_disease
             not_found= []
             multiple_objects= []
@@ -791,8 +804,6 @@ class UpdateProbablities(APIView):
                         not_found.append(obj)
 
                     print("\n\n")
-
-
             
             return Response({
                 "status":True,
@@ -808,3 +819,90 @@ class UpdateProbablities(APIView):
                 "message": f"Somethong wents wrong, General Exceaption {swr}"
             }, status= status.HTTP_400_BAD_REQUEST
             )
+
+
+class UpdateOurCSVs(APIView):
+    """
+    This API is reponsible to update our csv files in our project directory 
+        i.e.    - updated_csv/beta    ( update_physical_finding.csv )
+                - updated_csv/live
+    
+    """
+    def get(self, request):
+        for_db= request.GET.get("db", None)
+
+        if not for_db:
+            for_db = 'default'
+            directory_path = "updated_csv/default/"
+
+        if for_db:
+            directory_path = f"updated_csv/{for_db}/"
+
+        csv_files = [file for file in os.listdir(directory_path) if file.endswith('.csv')]
+
+        symtoms_disease_len= [] # check having more than 11 record of same symotoms
+        name_conflict_symptoms_query= []  # check having more than 1 symptoms name in same disease
+        symptoms_not_found = []  # check those symptoms not found in DB but in csv
+        
+        # Specify the database to use based on 'for_db' parameter
+        db_alias = 'beta' if for_db == 'beta' else 'default'
+
+        for csv_file in csv_files:
+            csv_file_path = os.path.join(directory_path, csv_file)
+            df = pd.read_csv(csv_file_path)
+
+            for index , row in df.iterrows():
+                csv_symptoms = row['Chest Pain']
+                print(csv_symptoms)
+
+                # check_symptoms = symtoms.objects.filter(name__startswith = csv_symptoms)
+                check_symptoms = symtoms.objects.using(db_alias).filter(name__startswith=csv_symptoms)
+
+                if len(check_symptoms) > 11:
+                    symtoms_disease_len.append(csv_symptoms)
+
+                for disease , probability in row[2:].items():
+                    obj = {
+                        "csv_symptoms": csv_symptoms,
+                        "disease": disease,
+                        "probability": probability
+                    }
+
+                    print(f"csv_symptoms = {csv_symptoms} disease is =  {disease} and probablity is {probability}"  )
+
+                    fetch_default_symptom = symtoms.objects.using(db_alias).filter(
+                        name__startswith=csv_symptoms,
+                        diseasesname__name=disease
+                    )
+                    if len(fetch_default_symptom) > 1:
+                        name_conflict_symptoms_query.append(obj)
+
+                    fetch_symptom = fetch_default_symptom.first()
+                    if fetch_symptom:
+                        print( f"database symptoms = {fetch_symptom.name}, Disease = {fetch_symptom.diseasesname}, probab= {fetch_symptom.probability}")
+
+                        # check the probability if different in csv and DB
+                        if probability != fetch_symptom.probability:
+                            print("________________________   DIFFERENT PROBABILITY ________________")
+                            # update probablity in dataframe for csv 
+                            df.at[index, disease] = fetch_symptom.probability
+                    
+                        print("\n\n")
+                    
+                    else :
+                        symptoms_not_found.append(obj)
+            
+            df.to_csv(f"{directory_path}/updated__{csv_file}", index=False)
+
+        
+        return Response({
+            "status": True,
+            "message": "csv Updated Successfully",
+            "more than 11 symptoms in DB": symtoms_disease_len,
+            "more than 1 symptoms with same disease in DB": name_conflict_symptoms_query,
+            "symptoms_not_found in db": symptoms_not_found
+            }, status= 200)
+
+
+
+
